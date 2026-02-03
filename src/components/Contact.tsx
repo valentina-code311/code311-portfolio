@@ -1,10 +1,11 @@
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Contact = () => {
+  const email = "valentina@cogdiver.com";
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#", username: "@tuusuario" },
-    { icon: Linkedin, label: "LinkedIn", href: "#", username: "in/tuusuario" },
-    { icon: Mail, label: "Email", href: "mailto:tu@email.com", username: "tu@email.com" },
+    { icon: Github, label: "GitHub", href: "https://github.com/valentina-code311", username: "@valentina-code311" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-code311", username: "in/valentina-code311" },
+    { icon: Mail, label: "Email", href: `mailto:${email}`, username: email },
   ];
 
   return (
@@ -31,11 +32,10 @@ const Contact = () => {
           </div>
           <div className="font-mono text-sm">
             <p className="text-muted-foreground mb-1">
-              <span className="text-secondary">~</span> $ echo "¿Listo para colaborar?"
+              <span className="text-secondary">~</span> $ echo "¿Listo para crear impacto?"
             </p>
-            <p className="text-foreground mb-3">¿Listo para colaborar?</p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="tu@email.com"
+              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="{email}"
               <span className="typing-cursor text-primary">|</span>
             </p>
           </div>
@@ -47,6 +47,8 @@ const Contact = () => {
             <a
               key={index}
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 px-6 py-4 border-gradient 
                 hover:scale-105 transition-transform duration-300"
             >
@@ -58,17 +60,6 @@ const Contact = () => {
             </a>
           ))}
         </div>
-
-        {/* CTA Button */}
-        <a 
-          href="mailto:tu@email.com"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold
-            text-primary-foreground transition-all duration-300 hover:scale-105 animate-pulse-glow"
-          style={{ background: "var(--gradient-primary)" }}
-        >
-          <Send className="w-5 h-5" />
-          Enviar mensaje
-        </a>
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-border">

@@ -19,16 +19,21 @@ const About = () => {
     },
     {
       year: "2024",
+      title: "AWS",
+      description: "Migración de procesos a AWS, implementando soluciones escalables y de alto impacto.",
+    },
+    {
+      year: "2025",
       title: "AI & Automatización",
       description: "Integración de modelos agentic, Vertex AI y automatizaciones inteligentes.",
     },
   ];
 
   const highlights = [
-    { icon: Terminal, label: "Python, SQL, Scala" },
-    { icon: Database, label: "BigQuery, Dataflow" },
-    { icon: Cloud, label: "GCP, Linux" },
-    { icon: GitBranch, label: "CI/CD, GitOps" },
+    { icon: Terminal, label: "SQL, Python, Scala, JavaScript, Linux, PowerShell" },
+    { icon: Database, label: "PostgreSQL, BigQuery, Redshift, Redis, MongoDB, Neo4j" },
+    { icon: GitBranch, label: "GitLab CI/CD, GitHub Actions, Docker, Copier, Terraform" },
+    { icon: Cloud, label: "GCP y AWS" },
   ];
 
   return (

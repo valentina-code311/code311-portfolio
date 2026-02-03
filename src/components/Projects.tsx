@@ -9,6 +9,7 @@ const Projects = () => {
       tags: ["GCP", "Dataflow", "BigQuery", "Terraform"],
       impact: "Reduce tiempo de setup en 80%",
       color: "primary",
+      href: "https://github.com/valentina-code311/etl-template-gcp",
     },
     {
       icon: Bot,
@@ -17,6 +18,7 @@ const Projects = () => {
       tags: ["Vertex AI", "OpenAI", "React", "Python"],
       impact: "3 productos en producción",
       color: "secondary",
+      href: "https://github.com/valentina-code311/agent-interfaces",
     },
     {
       icon: Share2,
@@ -25,6 +27,7 @@ const Projects = () => {
       tags: ["n8n", "APIs", "Social Media", "Webhooks"],
       impact: "50+ posts/semana automatizados",
       color: "accent",
+      href: "https://github.com/valentina-code311/automatizacion-n8n",
     },
     {
       icon: Mail,
@@ -33,6 +36,7 @@ const Projects = () => {
       tags: ["NLP", "OCR", "Cloud Functions", "ML"],
       impact: "95% precisión en clasificación",
       color: "primary",
+      href: "https://github.com/valentina-code311/email-document-processing",
     },
     {
       icon: TrendingUp,
@@ -41,6 +45,7 @@ const Projects = () => {
       tags: ["Time Series", "Python", "Plotly", "FastAPI"],
       impact: "Precisión MAPE < 10%",
       color: "secondary",
+      href: "https://github.com/valentina-code311/forecasting-platform",
     },
     {
       icon: Package,
@@ -49,6 +54,7 @@ const Projects = () => {
       tags: ["Inventario", "Python", "PostgreSQL", "AWS"],
       impact: "Control 100% del stock",
       color: "accent",
+      href: "https://github.com/valentina-code311/trazabilidad",
     },
   ];
 
@@ -119,12 +125,18 @@ const Projects = () => {
               </div>
 
               {/* Hover arrow */}
-              <div className="mt-4 flex items-center text-sm text-muted-foreground 
-                group-hover:text-primary transition-colors">
-                <span className="font-mono">Ver más</span>
-                <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="mt-4 flex items-center text-sm text-muted-foreground
+                  group-hover:text-primary transition-colors cursor-pointer">
+                  <span className="font-mono">Ver más</span>
+                  <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 
                   -translate-x-2 group-hover:translate-x-0 transition-all" />
-              </div>
+                </div>
+              </a>
             </div>
           ))}
         </div>

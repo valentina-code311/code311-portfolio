@@ -47,7 +47,7 @@ const Navbar = () => {
             className="font-mono font-bold text-lg"
           >
             <span className="text-primary">{"<"}</span>
-            <span className="text-foreground">DE</span>
+            <span className="text-foreground">Code311 </span>
             <span className="text-primary">{"/>"}</span>
           </a>
 

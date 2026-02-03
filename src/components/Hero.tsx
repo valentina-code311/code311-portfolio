@@ -69,7 +69,7 @@ const Hero = () => {
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
           <span className="text-foreground">Hola, soy </span>
-          <span className="text-gradient">Tu Nombre</span>
+          <span className="text-gradient">Valentina</span>
         </h1>
 
         <div className="h-16 mb-8">
@@ -92,8 +92,7 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-16 animate-slide-up" style={{ animationDelay: "0.5s" }}>
           {[
             { value: "5+", label: "Años experiencia" },
-            { value: "10+", label: "Proyectos" },
-            { value: "GCP", label: "Cloud" },
+            { value: "20+", label: "Proyectos" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>

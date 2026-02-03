@@ -6,28 +6,37 @@ const Skills = () => {
         { name: "Python", level: 95 },
         { name: "SQL", level: 90 },
         { name: "Scala", level: 75 },
-        { name: "Bash/Linux", level: 85 },
+        { name: "JavaScript", level: 70 },
       ],
     },
     {
       title: "Cloud & Data",
       skills: [
-        { name: "GCP (BigQuery, Dataflow)", level: 90 },
-        { name: "AWS (S3, Lambda, Redshift)", level: 80 },
-        { name: "Cloud Composer", level: 80 },
-        { name: "Vertex AI", level: 75 },
+        { name: "Google Cloud Platform", level: 90 },
+        { name: "Cloud Composer", level: 85 },
+        { name: "Vertex AI, OpenAI", level: 80 },
+        { name: "Amazon Web Services", level: 70 },
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "GitLab CI/CD", level: 85 },
-        { name: "Docker", level: 80 },
-        { name: "Terraform", level: 70 },
+        { name: "GitLab CI/CD", level: 95 },
+        { name: "Docker", level: 90 },
+        { name: "Terraform", level: 85 },
+        { name: "Bash/Linux", level: 80 },
       ],
     },
   ];
+
+  const otherSkills = [
+    "Airflow", "n8n",
+    "Apache Beam", "Spark", 
+    "GitHub Actions",
+    "Kafka", "Redis", "PostgreSQL", "MongoDB",
+    "OpenAI API", "FastAPI", "Pandas",
+    "S3", "Lambda", "Redshift", "EC2", "Workflows", "Cloud Build", "Cloud Run"
+  ]
 
   return (
     <section id="skills" className="py-24 px-4 bg-muted/20">
@@ -82,12 +91,7 @@ const Skills = () => {
         {/* Tech cloud */}
         <div className="mt-16 text-center">
           <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "Apache Beam", "Airflow", "dbt", "Spark", 
-              "Kafka", "Redis", "PostgreSQL", "MongoDB",
-              "OpenAI API", "n8n", "FastAPI", "Pandas",
-              "S3", "Lambda", "Redshift", "EC2"
-            ].map((tech, index) => (
+            {otherSkills.map((tech, index) => (
               <span 
                 key={index}
                 className="px-4 py-2 rounded-full bg-muted/50 text-muted-foreground font-mono text-sm
