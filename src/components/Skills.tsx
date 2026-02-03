@@ -12,8 +12,8 @@ const Skills = () => {
     {
       title: "Cloud & Data",
       skills: [
-        { name: "BigQuery", level: 90 },
-        { name: "Dataflow", level: 85 },
+        { name: "GCP (BigQuery, Dataflow)", level: 90 },
+        { name: "AWS (S3, Lambda, Redshift)", level: 80 },
         { name: "Cloud Composer", level: 80 },
         { name: "Vertex AI", level: 75 },
       ],
@@ -85,7 +85,8 @@ const Skills = () => {
             {[
               "Apache Beam", "Airflow", "dbt", "Spark", 
               "Kafka", "Redis", "PostgreSQL", "MongoDB",
-              "OpenAI API", "n8n", "FastAPI", "Pandas"
+              "OpenAI API", "n8n", "FastAPI", "Pandas",
+              "S3", "Lambda", "Redshift", "EC2"
             ].map((tech, index) => (
               <span 
                 key={index}
