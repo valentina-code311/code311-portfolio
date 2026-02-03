@@ -3,14 +3,14 @@ import { Terminal, Database, Cloud, GitBranch } from "lucide-react";
 const About = () => {
   const timeline = [
     {
-      year: "2019",
-      title: "Inicio en Data Engineering",
-      description: "Primeros pasos en el mundo de los datos, aprendiendo Python, SQL y fundamentos de ETL.",
+      year: "2020",
+      title: "Ingeniería Industrial + Data Analyst",
+      description: "Egresada de Ingeniería Industrial. Primeros pasos en análisis de datos con Python, SQL y visualización.",
     },
     {
-      year: "2020",
-      title: "Especialización en Cloud",
-      description: "Profundización en Google Cloud Platform, BigQuery y arquitecturas de datos modernas.",
+      year: "2021",
+      title: "Transición a Data Engineer",
+      description: "Evolución hacia pipelines ETL, arquitecturas de datos y Google Cloud Platform.",
     },
     {
       year: "2022",
@@ -18,14 +18,19 @@ const About = () => {
       description: "Implementación de prácticas DevOps en proyectos de datos con GitLab y GitHub Actions.",
     },
     {
+      year: "2023",
+      title: "Posgrado & Especialización Cloud",
+      description: "Estudios de posgrado. Dominio avanzado de GCP, BigQuery y arquitecturas escalables.",
+    },
+    {
       year: "2024",
-      title: "AWS",
-      description: "Migración de procesos a AWS, implementando soluciones escalables y de alto impacto.",
+      title: "Data Engineer Senior + AWS",
+      description: "Rol senior. Migración de procesos a AWS, liderando soluciones de alto impacto.",
     },
     {
       year: "2025",
       title: "AI & Automatización",
-      description: "Integración de modelos agentic, Vertex AI y automatizaciones inteligentes.",
+      description: "Integración de modelos agentic, Vertex AI, n8n y automatizaciones inteligentes.",
     },
   ];
 
@@ -48,7 +53,7 @@ const About = () => {
             Mi <span className="text-gradient">Recorrido</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            5 años construyendo soluciones de datos escalables y de alto impacto
+            De Ingeniería Industrial a Data Engineer Senior en 5 años de evolución constante
           </p>
         </div>
 
