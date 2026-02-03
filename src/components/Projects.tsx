@@ -1,4 +1,4 @@
-import { ExternalLink, Workflow, Bot, Share2, Mail, TrendingUp } from "lucide-react";
+import { ExternalLink, Workflow, Bot, Share2, Mail, TrendingUp, Package } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -41,6 +41,14 @@ const Projects = () => {
       tags: ["Time Series", "Python", "Plotly", "FastAPI"],
       impact: "Precisión MAPE < 10%",
       color: "secondary",
+    },
+    {
+      icon: Package,
+      title: "Sistema de Trazabilidad",
+      description: "Sistema de gestión de inventario para el área de almacén de una clínica. Control de stock, trazabilidad de productos y alertas automáticas.",
+      tags: ["Inventario", "Python", "PostgreSQL", "AWS"],
+      impact: "Control 100% del stock",
+      color: "accent",
     },
   ];
 
