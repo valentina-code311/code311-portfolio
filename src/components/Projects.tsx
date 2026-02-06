@@ -1,6 +1,10 @@
-import { ExternalLink, Workflow, Bot, Share2, Mail, TrendingUp, Package } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Workflow, Bot, Share2, Mail, TrendingUp, Package, ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       icon: Workflow,
@@ -67,6 +71,8 @@ const Projects = () => {
     }
   };
 
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <section id="projects" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
@@ -85,7 +91,7 @@ const Projects = () => {
 
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div 
               key={index}
               className="group border-gradient p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col"
@@ -140,6 +146,29 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {/* Show more/less button */}
+        {projects.length > 3 && (
+          <div className="text-center mt-10">
+            <Button
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="font-mono gap-2 border-primary/50 hover:bg-primary/10 hover:border-primary"
+            >
+              {showAll ? (
+                <>
+                  Ver menos
+                  <ChevronUp className="w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Ver todos los proyectos ({projects.length})
+                  <ChevronDown className="w-4 h-4" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
