@@ -1,11 +1,11 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Gitlab, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const email = "valentina@cogdiver.com";
+  const email = "valentina@code311.com";
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "https://github.com/valentina-code311", username: "@valentina-code311" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-code311", username: "in/valentina-code311" },
-    { icon: Mail, label: "Email", href: `mailto:${email}`, username: email },
+    { icon: Gitlab, label: "Gitlab", href: "https://gitlab.com/valentina-code311", username: "@valentina-code311" },
   ];
 
   return (

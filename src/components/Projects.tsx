@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Workflow, Bot, Share2, Mail, TrendingUp, Package, ChevronDown, ChevronUp } from "lucide-react";
+import { Rocket, Bot, Share2, ShoppingCart, Mail, TrendingUp, FileText, Package, Dumbbell, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -7,51 +7,75 @@ const Projects = () => {
 
   const projects = [
     {
-      icon: Workflow,
-      title: "Template ETL para GCP",
-      description: "Plantilla reutilizable para desplegar proyectos de ETL en Google Cloud Platform. Incluye Workflow, Dataflow, BigQuery y monitoreo integrado.",
-      tags: ["GCP", "Dataflow", "BigQuery", "Terraform"],
-      impact: "Reduce tiempo de setup en 80%",
+      icon: Rocket,
+      title: "Portal de Plantillas Cloud",
+      description: "Portal centralizado para despliegue ágil de proyectos en GCP. Integración directa con GitLab para CI/CD automático, plantillas preconfiguradas de ETL con Dataflow, BigQuery, Workflows y monitoreo listo para producción.",
+      tags: ["GCP", "GitLab", "Terraform", "Dataflow", "BigQuery"],
+      impact: "Reduce setup de proyectos en 80%",
       color: "primary",
     },
     {
       icon: Bot,
       title: "Interfaces Agentic AI",
-      description: "Desarrollo de interfaces web para interactuar con modelos agentic utilizando Vertex AI y OpenAI. Experiencia conversacional avanzada.",
+      description: "Interfaces web conversacionales para agentes de IA autónomos. Integración con Vertex AI y OpenAI para experiencias multi-turno con ejecución de herramientas y toma de decisiones en tiempo real.",
       tags: ["Vertex AI", "OpenAI", "React", "Python"],
       impact: "3 productos en producción",
       color: "secondary",
     },
     {
-      icon: Share2,
-      title: "Automatización n8n",
-      description: "Flujos automatizados para publicación de contenido en múltiples redes sociales. Scheduling inteligente y análisis de engagement.",
-      tags: ["n8n", "APIs", "Social Media", "Webhooks"],
-      impact: "50+ posts/semana automatizados",
+      icon: ShoppingCart,
+      title: "Catálogo & Despachos E-commerce",
+      description: "Sistema integral de comercio electrónico: catálogo de productos, autenticación de clientes, gestión de ciudades, módulo de despacho y pasarela de pagos. Dashboard analítico para seguimiento de pedidos y métricas de negocio.",
+      tags: ["FastAPI", "Supabase", "React", "GCP"],
+      impact: "Pipeline completo de e-commerce",
       color: "accent",
     },
     {
-      icon: Mail,
-      title: "Email & Document Processing",
-      description: "Sistema de etiquetado automático de correos y extracción de información de documentos adjuntos usando NLP y OCR.",
-      tags: ["NLP", "OCR", "Cloud Functions", "ML"],
-      impact: "95% precisión en clasificación",
+      icon: FileText,
+      title: "Gestor Documental Inteligente",
+      description: "Sistema de creación documental impulsado por IA. Sesiones configurables con prompts que, combinados con el contexto del proyecto y las interacciones por chat, generan documentos estructurados de forma iterativa.",
+      tags: ["AI", "LLM", "React", "Python"],
+      impact: "Generación documental automatizada",
       color: "primary",
+    },
+    {
+      icon: Share2,
+      title: "Automatización n8n",
+      description: "Flujos automatizados de publicación multicanal en redes sociales. Scheduling inteligente basado en métricas de engagement y análisis de rendimiento por plataforma.",
+      tags: ["n8n", "APIs", "Social Media", "Webhooks"],
+      impact: "50+ posts/semana automatizados",
+      color: "secondary",
     },
     {
       icon: TrendingUp,
       title: "Plataforma de Forecasting",
-      description: "Desarrollo de plataforma para realizar pronósticos con modelos estadísticos SES, SED y ARIMA. Dashboard interactivo incluido.",
+      description: "Plataforma de pronósticos con modelos estadísticos SES, SED y ARIMA. Dashboard interactivo para visualización de tendencias, estacionalidad y comparación de precisión entre modelos.",
       tags: ["Time Series", "Python", "Plotly", "FastAPI"],
       impact: "Precisión MAPE < 10%",
-      color: "secondary",
+      color: "accent",
+    },
+    {
+      icon: Mail,
+      title: "Clasificación Inteligente de Emails",
+      description: "Agente autónomo con Vertex AI que etiqueta correos en Gmail y extrae datos de documentos adjuntos. Incluye dashboard en Looker Studio para analítica de volumen y patrones de comunicación.",
+      tags: ["Vertex AI", "Gmail API", "Looker Studio", "GCP"],
+      impact: "95% precisión en clasificación",
+      color: "primary",
     },
     {
       icon: Package,
-      title: "Sistema de Trazabilidad",
-      description: "Sistema de gestión de inventario para el área de almacén de una clínica. Control de stock, trazabilidad de productos y alertas automáticas.",
-      tags: ["Inventario", "Python", "PostgreSQL", "AWS"],
-      impact: "Control 100% del stock",
+      title: "Sistema de Gestión de Inventario",
+      description: "Plataforma de solicitudes de inventario multiárea. Control de productos disponibles, límites de cantidad por área, días de despacho configurables, gestión de pendientes y trazabilidad completa de entregas.",
+      tags: ["Python", "PostgreSQL", "AWS", "Docker"],
+      impact: "Control centralizado multiárea",
+      color: "secondary",
+    },
+    {
+      icon: Dumbbell,
+      title: "Plataforma para Entrenadores",
+      description: "Sistema integral para entrenadores personales: seguimiento de clientes, gestión de agenda, planes de alimentación, métricas de peso y repeticiones por ejercicio. Catálogo de ejercicios con contenido multimedia.",
+      tags: ["React", "FastAPI", "Supabase", "GCP"],
+      impact: "Gestión completa de clientes",
       color: "accent",
     },
   ];
@@ -86,12 +110,12 @@ const Projects = () => {
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
-            <div 
+            <div
               key={index}
               className="group border-gradient p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col"
             >
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mb-4 
+              <div className={`w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mb-4
                 group-hover:scale-110 transition-transform ${getColorClass(project.color)}`}>
                 <project.icon className="w-6 h-6" />
               </div>
@@ -115,7 +139,7 @@ const Projects = () => {
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
-                  <span 
+                  <span
                     key={tagIndex}
                     className="px-2 py-1 text-xs font-mono bg-muted/30 text-muted-foreground rounded"
                   >
