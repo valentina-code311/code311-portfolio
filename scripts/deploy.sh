@@ -1,3 +1,5 @@
+set -e
+
 Usage() {
   echo "Usage: ./deploy.sh [back|front]"
   exit 1

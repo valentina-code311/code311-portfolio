@@ -21,6 +21,20 @@ SetupFrontend() {
     --display-name $BASE_NAME-ci \
     --description "SA for service $BASE_NAME-ci"
 
+  # Config CI/CD Service Account Permissions
+  SA_EMAIL=$BASE_NAME-ci@$PROJECT.iam.gserviceaccount.com
+  gcloud projects add-iam-policy-binding $PROJECT \
+    --member serviceAccount:$SA_EMAIL \
+    --role roles/artifactregistry.writer
+
+  gcloud projects add-iam-policy-binding $PROJECT \
+    --member serviceAccount:$SA_EMAIL \
+    --role roles/run.developer
+
+  gcloud projects add-iam-policy-binding $PROJECT \
+    --member serviceAccount:$SA_EMAIL \
+    --role roles/iam.serviceAccountUser
+
   # download ci json from service account
   gcloud iam service-accounts keys create \
     conn/gcp_ci.json \
