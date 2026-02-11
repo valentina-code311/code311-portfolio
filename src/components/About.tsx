@@ -3,36 +3,37 @@ import { Terminal, Database, Cloud, GitBranch } from "lucide-react";
 const About = () => {
   const timeline = [
     {
-      year: "2020",
-      title: "Ingeniería Industrial + Data Analyst",
-      description: "Egresada de Ingeniería Industrial. Primeros pasos en análisis de datos con Python, SQL y visualización.",
-    },
-    {
       year: "2021",
-      title: "Transición a Data Engineer",
-      description: "Evolución hacia pipelines ETL, arquitecturas de datos y Google Cloud Platform.",
+      title: "Ingeniería Industrial · Data Analytics",
+      description:
+        "Egreso de Ingeniería Industrial. Inicio en análisis de datos con Python, SQL y visualización; enfoque en toma de decisiones basada en datos.",
     },
     {
       year: "2022",
-      title: "DataOps & CI/CD",
-      description: "Implementación de prácticas DevOps en proyectos de datos con GitLab y GitHub Actions.",
+      title: "Transición a Data Engineering",
+      description:
+        "Diseño y construcción de pipelines ETL/ELT, modelado de datos y automatización de procesos con SQL; primeras arquitecturas orientadas a escalabilidad.",
     },
     {
       year: "2023",
-      title: "Posgrado & Especialización Cloud",
-      description: "Estudios de posgrado. Dominio avanzado de GCP, BigQuery y arquitecturas escalables.",
+      title: "Cloud Data Platform · DataOps (GCP)",
+      description:
+        "Consolidación en GCP (BigQuery y arquitectura escalable). Implementación de DataOps, CI/CD y buenas prácticas para despliegues confiables; proyectos de forecasting.",
     },
     {
       year: "2024",
-      title: "Data Engineer Senior + AWS",
-      description: "Rol senior. Migración de procesos a AWS, liderando soluciones de alto impacto.",
+      title: "Data Engineer · Multi-Cloud",
+      description:
+        "Integraciones AWS ↔ GCP, IaC/automatización (CI/CD con GitLab y GitHub Actions) y construcción de soluciones end-to-end con enfoque producto.",
     },
     {
       year: "2025",
-      title: "AI & Automatización",
-      description: "Integración de modelos agentic, Vertex AI, n8n y automatizaciones inteligentes.",
+      title: "AI Engineering & Automatización",
+      description:
+        "Integración de LLMs y flujos agentic (Vertex AI), automatizaciones con n8n e implementación de soluciones inteligentes para optimizar procesos operativos.",
     },
   ];
+
 
   const highlights = [
     { icon: Terminal, label: "SQL, Python, Scala, JavaScript, Linux, PowerShell" },

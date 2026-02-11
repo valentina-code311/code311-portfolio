@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Data Engineer";
+  const fullText = "DataOps";
   
   useEffect(() => {
     let index = 0;
@@ -77,7 +77,7 @@ const Hero = () => {
             {"<"}
             <span className="text-primary">{displayText}</span>
             <span className="typing-cursor text-secondary">|</span>
-            {" />"}
+            {"/>"}
           </p>
         </div>
 
