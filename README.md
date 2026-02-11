@@ -1,121 +1,121 @@
 # Valentina Code311 - Portfolio
 
-Portfolio profesional de **Valentina Code311**, Data Engineer especializada en DataOps, soluciones cloud (GCP/AWS) y automatizacion con IA.
+Professional portfolio of **Valentina Code311**, Data Engineer specialized in DataOps, cloud solutions (GCP/AWS) and AI automation.
 
 ![OpenGraph](docs/opengraph-image.png)
 
 ## Tech Stack
 
-| Capa | Tecnologias |
-|------|-------------|
+| Layer | Technologies |
+|-------|--------------|
 | **Framework** | React 18, TypeScript, Vite |
 | **UI** | Tailwind CSS, shadcn/ui (Radix UI), Lucide Icons |
 | **Routing** | React Router DOM |
 | **Testing** | Vitest, Testing Library |
-| **Contenedor** | Docker (multi-stage con Nginx) |
+| **Container** | Docker (multi-stage with Nginx) |
 | **CI/CD** | GitHub Actions |
 | **Hosting** | Google Cloud Run + Artifact Registry |
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
-├── components/        # Componentes principales del sitio
-│   ├── Hero.tsx       # Seccion de bienvenida con animacion de escritura
-│   ├── About.tsx      # Linea de tiempo profesional (2021-2025)
-│   ├── Skills.tsx     # Habilidades tecnicas con barras de progreso
-│   ├── Projects.tsx   # Proyectos destacados con vista expandible
-│   ├── Services.tsx   # Servicios ofrecidos
-│   ├── Contact.tsx    # Informacion de contacto y redes sociales
-│   ├── Navbar.tsx     # Navegacion responsive con menu movil
-│   └── ui/            # Componentes de shadcn/ui
+├── components/        # Main site components
+│   ├── Hero.tsx       # Welcome section with typing animation
+│   ├── About.tsx      # Professional timeline (2021-2025)
+│   ├── Skills.tsx     # Technical skills with progress bars
+│   ├── Projects.tsx   # Featured projects with expandable view
+│   ├── Services.tsx   # Offered services
+│   ├── Contact.tsx    # Contact info and social media
+│   ├── Navbar.tsx     # Responsive navigation with mobile menu
+│   └── ui/            # shadcn/ui components
 ├── pages/
-│   ├── Index.tsx      # Pagina principal (SPA)
-│   └── NotFound.tsx   # Pagina 404
+│   ├── Index.tsx      # Main page (SPA)
+│   └── NotFound.tsx   # 404 page
 ├── hooks/             # Custom hooks (mobile detection, toast)
-└── lib/               # Utilidades (cn class merger)
+└── lib/               # Utilities (cn class merger)
 
 docker/
-└── front.Dockerfile   # Build multi-stage (Node 20 + Nginx)
+└── front.Dockerfile   # Multi-stage build (Node 20 + Nginx)
 
 scripts/
-├── deploy.sh          # Despliegue a Cloud Run
-├── setup.sh           # Configuracion de infraestructura GCP
-├── startup.sh         # Instalador de herramientas (gcloud, docker, aws, jq)
-└── gcp_login.sh       # Autenticacion GCP
+├── deploy.sh          # Cloud Run deployment
+├── setup.sh           # GCP infrastructure setup
+├── startup.sh         # Tools installer (gcloud, docker, aws, jq)
+└── gcp_login.sh       # GCP authentication
 
 .github/workflows/
-└── gcp-deploy.yml     # Pipeline CI/CD automatico
+└── gcp-deploy.yml     # Automated CI/CD pipeline
 ```
 
-## Desarrollo Local
+## Local Development
 
-Requisitos: [Node.js](https://nodejs.org/) >= 18
+Requirements: [Node.js](https://nodejs.org/) >= 18
 
 ```sh
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Iniciar servidor de desarrollo (puerto 8080)
+# Start development server (port 8080)
 npm run dev
 
-# Ejecutar tests
+# Run tests
 npm test
 
 # Lint
 npm run lint
 
-# Build de produccion
+# Production build
 npm run build
 ```
 
 ## Docker
 
 ```sh
-# Build y levantar con Docker Compose (puerto 8081)
+# Build and run with Docker Compose (port 8081)
 docker compose up --build
 
-# O build manual
+# Or manual build
 docker build -f docker/front.Dockerfile -t c311-front .
 docker run -p 8081:80 c311-front
 ```
 
-## Despliegue
+## Deployment
 
-El proyecto se despliega automaticamente en **Google Cloud Run** cuando se hace push a `main` con cambios en `src/`.
+The project is automatically deployed to **Google Cloud Run** when pushing to `main` with changes in `src/`.
 
-### Configuracion Inicial de GCP
+### Initial GCP Setup
 
 ```sh
-# Configurar infraestructura (Artifact Registry, service accounts, IAM)
+# Set up infrastructure (Artifact Registry, service accounts, IAM)
 sh scripts/setup.sh
 ```
 
-### Despliegue Manual
+### Manual Deployment
 
 ```sh
-# Desplegar frontend
+# Deploy frontend
 sh scripts/deploy.sh front
 ```
 
-### Variables de Entorno
+### Environment Variables
 
-Los secretos se gestionan via GitHub Variables/Secrets y se inyectan durante el CI/CD:
+Secrets are managed via GitHub Variables/Secrets and injected during CI/CD:
 
-| Variable | Descripcion |
+| Variable | Description |
 |----------|-------------|
-| `ENV_FILE` | Contenido del archivo `.env` principal |
-| `FRONTEND_ENV_FILE` | Variables del frontend (`VITE_API_URL`, etc.) |
-| `GCP_CREDENTIALS_JSON` | Credenciales de servicio GCP |
+| `ENV_FILE` | Main `.env` file content |
+| `FRONTEND_ENV_FILE` | Frontend variables (`VITE_API_URL`, etc.) |
+| `GCP_CREDENTIALS_JSON` | GCP service credentials |
 
-## Scripts Disponibles
+## Available Scripts
 
-| Comando | Descripcion |
+| Command | Description |
 |---------|-------------|
-| `npm run dev` | Servidor de desarrollo con HMR |
-| `npm run build` | Build de produccion |
-| `npm run build:dev` | Build en modo desarrollo |
-| `npm run preview` | Preview del build de produccion |
-| `npm test` | Ejecutar tests (una vez) |
-| `npm run test:watch` | Tests en modo watch |
-| `npm run lint` | Ejecutar ESLint |
+| `npm run dev` | Development server with HMR |
+| `npm run build` | Production build |
+| `npm run build:dev` | Development mode build |
+| `npm run preview` | Production build preview |
+| `npm test` | Run tests (once) |
+| `npm run test:watch` | Tests in watch mode |
+| `npm run lint` | Run ESLint |
