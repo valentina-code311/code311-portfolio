@@ -10,9 +10,8 @@ const Contact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
   const email = "valentina@code311.com";
-  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&to=${email}`;
   const socialLinks = [
-    { icon: Mail, label: "Email", href: gmailComposeUrl, username: email, external: true },
+    { icon: Mail, label: "Email", href: `mailto:${email}`, username: email, external: false },
     { icon: Github, label: "GitHub", href: "https://github.com/valentina-code311", username: "@valentina-code311", external: true },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-code311", username: "in/valentina-code311", external: true },
     { icon: Gitlab, label: "Gitlab", href: "https://gitlab.com/valentina-code311", username: "@valentina-code311", external: true },
