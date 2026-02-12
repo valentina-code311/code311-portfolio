@@ -1,11 +1,13 @@
-import { Github, Gitlab, Linkedin } from "lucide-react";
+import { Github, Gitlab, Linkedin, Mail } from "lucide-react";
 
 const Contact = () => {
   const email = "valentina@code311.com";
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&to=${email}`;
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "https://github.com/valentina-code311", username: "@valentina-code311" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-code311", username: "in/valentina-code311" },
-    { icon: Gitlab, label: "Gitlab", href: "https://gitlab.com/valentina-code311", username: "@valentina-code311" },
+    { icon: Mail, label: "Email", href: gmailComposeUrl, username: email, external: true },
+    { icon: Github, label: "GitHub", href: "https://github.com/valentina-code311", username: "@valentina-code311", external: true },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-code311", username: "in/valentina-code311", external: true },
+    { icon: Gitlab, label: "Gitlab", href: "https://gitlab.com/valentina-code311", username: "@valentina-code311", external: true },
   ];
 
   return (
@@ -35,7 +37,7 @@ const Contact = () => {
               <span className="text-secondary">~</span> $ echo "¿Listo para crear impacto?"
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="{email}"
+              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="<a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors underline">{email}</a>"
               <span className="typing-cursor text-primary">|</span>
             </p>
           </div>
@@ -47,9 +49,8 @@ const Contact = () => {
             <a
               key={index}
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-4 border-gradient 
+              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="group flex items-center gap-3 px-6 py-4 border-gradient
                 hover:scale-105 transition-transform duration-300"
             >
               <link.icon className="w-5 h-5 text-primary group-hover:text-secondary transition-colors" />
