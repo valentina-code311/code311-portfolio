@@ -58,7 +58,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex flex-col overflow-hidden pt-16">
       {/* Background gradient */}
       <div
         className="absolute inset-0 opacity-50"
@@ -93,7 +93,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center">
         {/* Terminal-style intro */}
         <div className="mb-6 inline-block animate-fade-in">
           <span className="font-mono text-sm text-muted-foreground bg-muted/30 px-4 py-1.5 rounded-full border border-border/50">
@@ -130,7 +130,7 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div
-          className="flex flex-row gap-3 justify-center mb-16 animate-slide-up"
+          className="flex flex-row gap-3 justify-center mb-8 animate-slide-up"
           style={{ animationDelay: "0.45s" }}
         >
           <button
@@ -155,7 +155,7 @@ const Hero = () => {
 
         {/* Stats */}
         <div
-          className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 animate-slide-up"
+          className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 animate-slide-up"
           style={{ animationDelay: "0.6s" }}
         >
           {[
