@@ -1,6 +1,14 @@
 import { Github, Gitlab, Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const email = "valentina@code311.com";
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&to=${email}`;
   const socialLinks = [
@@ -37,7 +45,7 @@ const Contact = () => {
               <span className="text-secondary">~</span> $ echo "¿Listo para crear impacto?"
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="<a href={gmailComposeUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors underline">{email}</a>"
+              <span className="text-secondary">~</span> $ <span className="text-primary">send_message</span> --to="<span onClick={copyEmail} className="text-secondary hover:text-secondary/70 transition-colors cursor-pointer" title="Copiar correo">{copied ? "¡Copiado!" : email}</span>"
               <span className="typing-cursor text-primary">|</span>
             </p>
           </div>
