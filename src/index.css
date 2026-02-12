@@ -111,6 +111,10 @@
   .typing-cursor {
     animation: blink 1s step-end infinite;
   }
+
+  .hero-name-glow {
+    filter: drop-shadow(0 0 30px hsl(187 94% 43% / 0.4));
+  }
 }
 
 @layer utilities {
