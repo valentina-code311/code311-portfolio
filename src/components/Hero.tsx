@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, ArrowRight, Mail } from "lucide-react";
 
-const roles = ["DataOps", "ETL Pipelines", "Cloud Solutions", "Data Engineering"];
+const roles = ["AI Engineering", "DataOps", "Cloud Solutions", "Data Engineering"];
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -17,7 +17,7 @@ const Hero = () => {
         // Still typing
         const timer = setTimeout(() => {
           setDisplayText(currentRole.slice(0, displayText.length + 1));
-        }, 100);
+        }, 50);
         return () => clearTimeout(timer);
       } else {
         // Finished typing — pause then start deleting
